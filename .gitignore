@@ -1,0 +1,23 @@
+# Java
+*.class
+*.jar
+*.war
+*.log
+target/
+bin/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Eclipse
+*.classpath
+*.project
+*.settings/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Application Secrets
+.env
