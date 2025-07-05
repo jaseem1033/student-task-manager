@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: springboot-mysql-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: student_tasks
+      MYSQL_ROOT_PASSWORD: dockerpass
+   # ports:
+    #  - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  app:
+    build: .
+    container_name: springboot-app
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_PASSWORD: dockerpass
+volumes:
+  mysql_data:
