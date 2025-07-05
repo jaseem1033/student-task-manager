@@ -13,6 +13,7 @@ A role-based task management system built with Spring Boot, where Admins can ass
 - Lombok
 - Swagger / OpenAPI
 - Maven
+- Docker 
 
 ---
 
@@ -49,7 +50,7 @@ src
 │   │       └── security  
 │   └── resources  
 │       ├── application.properties  
-│       └── schema.sql (optional)  
+│       └── schema.sql (optional)
 
 ---
 
@@ -84,6 +85,44 @@ src
 
 ---
 
+## 🐳 How to Run with Docker
+
+You can run the entire application including MySQL using Docker and Docker Compose.
+### 📦 Prerequisites
+
+- Docker installed
+- Docker Compose installed
+
+### ▶️ Steps to Run
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/jaseem1033/student-task-manager.git
+   cd student-task-manager
+2. Run the Docker containers:
+   ```
+   docker-compose up --build
+
+3. The application will be available at:
+http://localhost:8080
+
+
+4. Swagger UI (API Docs) will be available at:
+http://localhost:8080/swagger-ui/index.html
+
+
+5. MySQL will run in a separate container. Default credentials:
+
+      Host: localhost
+      
+      Port: 3306
+      
+      Username: root
+      
+      Password: dockerpass
+
+📌 Note: If you want to customize DB credentials, update them in docker-compose.yml and application.properties accordingly.
 ## 📸 API Documentation (Swagger UI)
 
 Once the server is running, visit: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
