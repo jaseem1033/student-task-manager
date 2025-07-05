@@ -123,7 +123,10 @@ http://localhost:8080/swagger-ui/index.html
       Password: dockerpass
 
 📌 Note: If you want to customize DB credentials, update them in docker-compose.yml and application.properties accordingly.
+
+---
 ## 📸 API Documentation (Swagger UI)
+
 
 Once the server is running, visit: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
