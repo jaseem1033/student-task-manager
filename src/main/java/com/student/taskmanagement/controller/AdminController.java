@@ -27,6 +27,7 @@ public class AdminController {
     @PostMapping("/register")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<User> registerUser(@RequestBody @Valid RegisterRequest request) {
+        System.out.println("vcnjsbfjfjjf");
         request.setRole("ADMIN");
         if (!"ADMIN".equalsIgnoreCase(request.getRole()))
             throw new RuntimeException("Only ADMIN can register");
@@ -46,6 +47,7 @@ public class AdminController {
     @PostMapping("/tasks")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<TaskResponse> assignTask(@RequestBody @Valid TaskRequest request) {
+        System.out.println("hi there");
         return new ResponseEntity<>(taskService.assignTask(request), HttpStatus.OK);
     }
 
